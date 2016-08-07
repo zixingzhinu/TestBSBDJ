@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EssenceViewController">
+            <connections>
+                <outlet property="contentScrollView" destination="dmx-Jy-oXG" id="JPu-VA-jso"/>
+                <outlet property="titleLayoutView" destination="MQb-MW-VAG" id="NnC-PY-zSm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmx-Jy-oXG">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="0jw-l5-cOn"/>
+                    </connections>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQb-MW-VAG" userLabel="TitleLayoutView">
+                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                    <color key="backgroundColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Ags-ki-m8O"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="dmx-Jy-oXG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B2f-3u-xRW"/>
+                <constraint firstItem="dmx-Jy-oXG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MDP-0g-3zh"/>
+                <constraint firstItem="MQb-MW-VAG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Z8o-RG-TkB"/>
+                <constraint firstAttribute="bottom" secondItem="dmx-Jy-oXG" secondAttribute="bottom" id="fsS-Wj-5gj"/>
+                <constraint firstAttribute="trailing" secondItem="MQb-MW-VAG" secondAttribute="trailing" id="n6v-9b-cqU"/>
+                <constraint firstItem="MQb-MW-VAG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rZt-xE-ax1"/>
+                <constraint firstAttribute="trailing" secondItem="dmx-Jy-oXG" secondAttribute="trailing" id="rxs-Jd-DGp"/>
+                <constraint firstItem="MQb-MW-VAG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="u6t-cU-IJ1"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="rZt-xE-ax1"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
