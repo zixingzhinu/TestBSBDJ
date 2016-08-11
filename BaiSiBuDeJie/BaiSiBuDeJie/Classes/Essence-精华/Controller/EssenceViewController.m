@@ -10,6 +10,7 @@
 #import "UIView+Extension.h"
 #import "RecommendTagsTableViewController.h"
 #import "TopicTableViewController.h"
+#import "TopicModel.h"
 
 
 @interface EssenceViewController ()<UIScrollViewDelegate>
@@ -51,14 +52,23 @@ static NSInteger titleButtonCount = 5;
 
 - (void)initChildControllers {
     TopicTableViewController *allTopic = [[TopicTableViewController alloc] init];
+    allTopic.type = TopicModelTypeAll;
     [self addChildViewController:allTopic];
+    
     TopicTableViewController *picTopic = [[TopicTableViewController alloc] init];
+    picTopic.type = TopicModelTypePicture;
     [self addChildViewController:picTopic];
+    
     TopicTableViewController *videoTopic = [[TopicTableViewController alloc] init];
+    videoTopic.type = TopicModelTypeVideo;
     [self addChildViewController:videoTopic];
+    
     TopicTableViewController *audioTopic = [[TopicTableViewController alloc] init];
+    audioTopic.type = TopicModelTypeAudio;
     [self addChildViewController:audioTopic];
+    
     TopicTableViewController *wordTopic = [[TopicTableViewController alloc] init];
+    wordTopic.type = TopicModelTypeWord;
     [self addChildViewController:wordTopic];
 }
 

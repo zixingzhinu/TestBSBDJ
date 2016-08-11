@@ -8,17 +8,28 @@
 
 #import "TopicTableViewController.h"
 #import <SVProgressHUD.h>
-#import "TopicModel.h"
 #import <MJRefresh.h>
+#import <MJExtension.h>
+#import "TopicTableViewCell.h"
 
-static NSString * const ID = @"cell_id";
+static NSString * const ID = @"cell_topic";
 
 @interface TopicTableViewController ()
+
+@property (strong, nonatomic) NSArray *topics;
 
 @end
 
 @implementation TopicTableViewController
 
+#pragma mark - lazy
+- (NSArray *)topics {
+    if (!_topics) {
+        _topics = [[NSArray alloc] init];
+    }
+    return _topics;
+}
+#pragma mark - lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,10 +38,18 @@ static NSString * const ID = @"cell_id";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
+    [self initTableView];
     [self initRefreshView];
 //    [self requestTopicData];
 }
+/**
+ *  初始化tableView
+ */
+- (void)initTableView {
+    self.tableView.backgroundColor = [UIColor lightGrayColor];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TopicTableViewCell class]) bundle:nil] forCellReuseIdentifier:ID];
+}
+
 /**
  *  初始化刷新控件
  */
@@ -44,17 +63,22 @@ static NSString * const ID = @"cell_id";
 //        [self requestTopicData];
     }];
 }
-
+/**
+ *  请求首页数据
+ */
 - (void)requestTopicData {
-    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+//    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     HttpsTool *httpTool = [HttpsTool sharedHttpsTool];
     NSMutableDictionary *paramsM = [NSMutableDictionary dictionary];
     paramsM[@"a"] = @"list";
     paramsM[@"c"] = @"data";
-    paramsM[@"type"] = @(TopicModelTypeWord);
+    paramsM[@"type"] = @(self.type);
     [httpTool GET:OPEN_URL parameters:paramsM success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [SVProgressHUD dismiss];
-        NSLog(@"%@", responseObject);
+//        [SVProgressHUD dismiss];
+//        NSLog(@"%@", responseObject);
+        self.topics = [TopicModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
@@ -74,15 +98,21 @@ static NSString * const ID = @"cell_id";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.topics.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"这是十分就失联飞机是打飞机上%ld", (long)indexPath.row];
+    TopicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+    TopicModel *topicModel = self.topics[indexPath.row];
+//    cell.textLabel.text = topicModel.text;
+    cell.topicModel = topicModel;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 400;
 }
 
 

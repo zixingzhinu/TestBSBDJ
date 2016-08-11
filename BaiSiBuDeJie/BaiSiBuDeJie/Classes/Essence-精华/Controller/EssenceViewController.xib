@@ -23,9 +23,9 @@
                         <outlet property="delegate" destination="-1" id="0jw-l5-cOn"/>
                     </connections>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQb-MW-VAG" userLabel="TitleLayoutView">
+                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQb-MW-VAG" userLabel="TitleLayoutView">
                     <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                    <color key="backgroundColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Ags-ki-m8O"/>
                     </constraints>

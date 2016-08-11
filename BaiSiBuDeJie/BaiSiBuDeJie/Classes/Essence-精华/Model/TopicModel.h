@@ -81,17 +81,34 @@ typedef NS_ENUM(NSUInteger, TopicModelType) {
 */
 @property (copy, nonatomic) NSString *profile_image;
 /**
+ *  发帖人的昵称
+ */
+@property (copy, nonatomic) NSString *screen_name;
+/**
  *  帖子的内容
  */
 @property (copy, nonatomic) NSString *text;
+/**
+ *  系统审核通过后创建帖子的时间
+ */
+@property (copy, nonatomic) NSString *created_at;
 @property (copy, nonatomic) NSString *ding;
 /**
  *  踩的人数
  */
 @property (copy, nonatomic) NSString *cai;
 /**
- *  每次加载下一页的时候，需要传入上一页返回参数中对应的此内容，例如：1434112682
+ *  转发的数量
  */
-@property (copy, nonatomic) NSString *maxtime;
+@property (copy, nonatomic) NSString *repost;
+/**
+ *  帖子的被评论数量
+ */
+@property (copy, nonatomic) NSString *comment;
+/**
+ *  是否是新浪会员
+ */
+@property (assign, nonatomic) NSInteger sina_v;
+
 
 @end

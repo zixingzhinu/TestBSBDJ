@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopicModel.h"
 
 
 @interface TopicTableViewController : UITableViewController
+
+@property (assign, nonatomic) TopicModelType type;
 
 @end

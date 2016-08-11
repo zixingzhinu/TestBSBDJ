@@ -18,6 +18,8 @@
 		1A22C4A41D54D50F003166B1 /* VerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A22C4A31D54D50F003166B1 /* VerticalButton.m */; };
 		1A3F4F611D5713E300D3647F /* TopicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F4F601D5713E300D3647F /* TopicTableViewController.m */; };
 		1A3F4F641D573B4800D3647F /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F4F631D573B4800D3647F /* TopicModel.m */; };
+		1A4CA4471D5B6B1D00070708 /* TopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4CA4451D5B6B1D00070708 /* TopicTableViewCell.m */; };
+		1A4CA4481D5B6B1D00070708 /* TopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4CA4461D5B6B1D00070708 /* TopicTableViewCell.xib */; };
 		1A4F61551D324A8400828F56 /* RecommendTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F61541D324A8400828F56 /* RecommendTags.m */; };
 		1A527B111D3A311C00FA2229 /* LoginAndRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A527B101D3A311C00FA2229 /* LoginAndRegisterViewController.xib */; };
 		1A6B2C261D3653B70017D681 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6B2C241D3653B70017D681 /* LoginAndRegisterViewController.m */; };
@@ -88,6 +90,9 @@
 		1A3F4F601D5713E300D3647F /* TopicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTableViewController.m; sourceTree = "<group>"; };
 		1A3F4F621D573B4800D3647F /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
 		1A3F4F631D573B4800D3647F /* TopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
+		1A4CA4441D5B6B1D00070708 /* TopicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicTableViewCell.h; sourceTree = "<group>"; };
+		1A4CA4451D5B6B1D00070708 /* TopicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTableViewCell.m; sourceTree = "<group>"; };
+		1A4CA4461D5B6B1D00070708 /* TopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicTableViewCell.xib; sourceTree = "<group>"; };
 		1A4F61521D32306800828F56 /* LJSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJSingleton.h; sourceTree = "<group>"; };
 		1A4F61531D324A8400828F56 /* RecommendTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendTags.h; sourceTree = "<group>"; };
 		1A4F61541D324A8400828F56 /* RecommendTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendTags.m; sourceTree = "<group>"; };
@@ -244,6 +249,9 @@
 				1ABC96D31D31350500DBE428 /* RecommendTagsTableViewCell.h */,
 				1ABC96D41D31350500DBE428 /* RecommendTagsTableViewCell.m */,
 				1ABC96D51D31350500DBE428 /* RecommendTagsTableViewCell.xib */,
+				1A4CA4441D5B6B1D00070708 /* TopicTableViewCell.h */,
+				1A4CA4451D5B6B1D00070708 /* TopicTableViewCell.m */,
+				1A4CA4461D5B6B1D00070708 /* TopicTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -672,6 +680,7 @@
 				1AD8DF311C64A89500403788 /* Main.storyboard in Resources */,
 				1AC13F121D27C13E00CAA80C /* EssenceViewController.xib in Resources */,
 				1AC13F211D27C1D100CAA80C /* MeViewController.xib in Resources */,
+				1A4CA4481D5B6B1D00070708 /* TopicTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +755,7 @@
 			files = (
 				1A6B2C261D3653B70017D681 /* LoginAndRegisterViewController.m in Sources */,
 				1A1E4B361D30F67400C59D35 /* UIView+Extension.m in Sources */,
+				1A4CA4471D5B6B1D00070708 /* TopicTableViewCell.m in Sources */,
 				1A1E4B331D30F67400C59D35 /* UIColor+Random.m in Sources */,
 				1A1E4B351D30F67400C59D35 /* UIImage+Extension.m in Sources */,
 				1ABC96D01D31341800DBE428 /* RecommendTagsTableViewController.m in Sources */,
