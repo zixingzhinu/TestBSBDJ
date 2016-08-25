@@ -36,7 +36,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IW0-Pb-gVp">
-                    <rect key="frame" x="178.5" y="349" width="243" height="48"/>
+                    <rect key="frame" x="179" y="349" width="243" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="P7W-TC-Gz6"/>
+                        <constraint firstAttribute="width" constant="243" id="qht-p5-f0l"/>
+                    </constraints>
                     <state key="normal" title="立即登录注册" backgroundImage="friendsTrend_login">
                         <color key="titleColor" red="1" green="0.35294117650000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -58,8 +62,8 @@
         </view>
     </objects>
     <resources>
-        <image name="friendsTrend_login" width="243" height="48"/>
-        <image name="friendsTrend_login_click" width="243" height="48"/>
+        <image name="friendsTrend_login" width="7" height="48"/>
+        <image name="friendsTrend_login_click" width="7" height="48"/>
         <image name="header_cry_icon" width="48" height="48"/>
     </resources>
 </document>

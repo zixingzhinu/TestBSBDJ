@@ -10,8 +10,21 @@
 
 @implementation VerticalButton
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initView];
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self initView];
+}
+
+- (void)initView {
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 

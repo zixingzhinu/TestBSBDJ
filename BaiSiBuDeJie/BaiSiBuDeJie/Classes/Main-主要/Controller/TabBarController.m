@@ -12,6 +12,7 @@
 #import "FriendTrendsViewController.h"
 #import "MeViewController.h"
 #import "NavigationViewController.h"
+#import "TabBar.h"
 
 @interface TabBarController ()
 
@@ -20,8 +21,7 @@
 @implementation TabBarController
 
 + (void)initialize {
-    UITabBar *tabBar = [UITabBar appearance];
-    tabBar.backgroundImage = [UIImage imageNamed:@"tabbar-light"];
+//    UITabBar *tabBar = [UITabBar appearance];
     
     UITabBarItem *item = [UITabBarItem appearance];
     NSMutableDictionary *attrs = [NSMutableDictionary dictionaryWithCapacity:1];
@@ -33,6 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setViewControllers:[self tabChildControllers] animated:YES];
+    [self setValue:[[TabBar alloc] init] forKeyPath:@"tabBar"];
 }
 
 - (void)didReceiveMemoryWarning {
