@@ -8,6 +8,7 @@
 
 #import "PublishViewController.h"
 #import "VerticalButton.h"
+#import <POP.h>
 
 #define MAX_COUNT 6
 #define MAX_COL_COUNT 3
@@ -40,12 +41,25 @@
         button.titleLabel.font = [UIFont systemFontOfSize:14];
         button.width = button.currentImage.size.width;
         button.height = button.currentImage.size.height + 30;
-        button.y = i / MAX_COL_COUNT * button.height + SCREEN_HEIGHT / 2 - button.height;
+        CGFloat buttonX = i / MAX_COL_COUNT * button.height + SCREEN_HEIGHT / 2 - button.height;
         CGFloat margin_middle = (SCREEN_WIDTH - MARGIN_LEFT_RIGHT * 2 - button.width * MAX_COL_COUNT) / 2;
-        button.x = i % MAX_COL_COUNT * (button.width + margin_middle) + MARGIN_LEFT_RIGHT;
+        CGFloat buttonY = i % MAX_COL_COUNT * (button.width + margin_middle) + MARGIN_LEFT_RIGHT;
+        button.x = buttonX;
+        button.y = -button.height + button.height / 2;
         [self.view addSubview:button];
+        
+        //组织动画
+        POPSpringAnimation *enterAnim = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
+//        enterAnim.fromValue = [NSValue valueWithCGPoint:CGPointMake(buttonX + button.width / 2, -button.height + button.height / 2)];
+        enterAnim.toValue = [NSValue valueWithCGPoint:CGPointMake(buttonX + button.width / 2, buttonY + button.height / 2)];
+        enterAnim.springSpeed = 12;
+        enterAnim.springBounciness = 8;
+        enterAnim.beginTime = CACurrentMediaTime() + 0.1 * i;
+        [button pop_addAnimation:enterAnim forKey:@"enterAnim"];
     }
-    UILabel *label = [[UILabel alloc] init];
+    UIImageView *sloganView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_slogan"]];
+    sloganView.center = CGPointMake(SCREEN_WIDTH / 2, 100);
+    [self.view addSubview:sloganView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +68,11 @@
 }
 
 - (IBAction)cancel {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
 }
 
 /*
